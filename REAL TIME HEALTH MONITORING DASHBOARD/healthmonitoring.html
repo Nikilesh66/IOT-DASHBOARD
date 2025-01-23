@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Rate Monitoring System by Nikilesh_NK</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 1rem;
+            padding: 2rem;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .card h2 {
+            margin: 0 0 1rem;
+            color: #4CAF50;
+        }
+        .card p {
+            font-size: 1.2rem;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Heart Rate Monitoring System for Elderly</h1>
+</header>
+
+<main>
+    <div class="card">
+        <h2>Heart Rate</h2>
+        <p id="heartRate">-- bpm</p>
+    </div>
+
+    <div class="card">
+        <h2>Blood Oxygen Level</h2>
+        <p id="bloodOxygen">-- %</p>
+    </div>
+
+    <div class="card">
+        <h2>Body Temperature</h2>
+        <p id="bodyTemp">-- &#8451;</p>
+    </div>
+
+    <button onclick="fetchData()">Refresh Data</button>
+</main>
+
+<footer>
+    <p>&copy; 2024 Heart Monitoring System. All rights reserved.</p>
+</footer>
+
+<script>
+    // Mock data fetch function
+    function fetchData() {
+        // Replace this with actual data fetching logic from ESP32
+        document.getElementById('heartRate').textContent = Math.floor(Math.random() * (100 - 60 + 1)) + 60 + ' bpm';
+        document.getElementById('bloodOxygen').textContent = Math.floor(Math.random() * (100 - 90 + 1)) + 90 + ' %';
+        document.getElementById('bodyTemp').textContent = (36 + Math.random()).toFixed(1) + ' ℃';
+    }
+</script>
+
+</body>
+</html>
